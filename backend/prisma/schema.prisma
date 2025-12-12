@@ -14,15 +14,20 @@ model User {
   name      String?
   role      UserRole @default(USER)
   createdAt DateTime @default(now())
+
+  sweets    Sweet[]
 }
 
 model Sweet {
-  id        Int      @id @default(autoincrement())
-  name      String
-  category  String
-  price     Float
-  quantity  Int      @default(0)
-  createdAt DateTime @default(now())
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String
+  price       Float
+  quantity    Int      @default(0)
+  createdAt   DateTime @default(now())
+
+  createdById Int?
+  createdBy   User?    @relation(fields: [createdById], references: [id])
 
   @@index([name])
 }
