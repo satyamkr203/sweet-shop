@@ -9,7 +9,16 @@ import { errorHandler } from './middleware/errorMiddleware.js';
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173", // local dev
+      "https://sweet-shop-seven-blush.vercel.app", // Vercel prod
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
