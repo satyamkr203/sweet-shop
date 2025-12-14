@@ -216,6 +216,20 @@ npm test
 * Dark mode UI
 
 ---
+## 🧠 My AI Usage
+
+I used AI tools (ChatGPT) as a debugging and development assistant during the implementation of this project.
+
+### How AI was used:
+- Debugging backend issues related to JWT authentication, role-based access control, and Prisma schema errors
+- Resolving Jest configuration issues for ES Modules
+- Debugging and validating Admin vs User routing logic in the frontend
+- Assisting in structuring protected routes for AdminDashboard and User Dashboard
+- Troubleshooting UI behavior such as conditional rendering based on user roles
+
+### Reflection:
+AI helped speed up debugging and reduce configuration friction, especially in areas like authentication flow, role propagation between backend and frontend, and frontend routing logic. All AI-suggested solutions were reviewed, understood, and adapted before being applied.
+---
 
 
 ## 👤 Author
