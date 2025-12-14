@@ -9,16 +9,25 @@ import { errorHandler } from './middleware/errorMiddleware.js';
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173", // local dev
-      "https://sweet-shop-seven-blush.vercel.app", // Vercel prod
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+// configuration for production
+const corsOptions = {
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      "http://localhost:5173",
+      "https://sweet-shop-seven-blush.vercel.app",
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
