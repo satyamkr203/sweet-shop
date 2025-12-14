@@ -20,7 +20,7 @@ export default function Navbar() {
           navigate(user.role === "ADMIN" ? "/admin" : "/dashboard")
         }
       >
-        🍬 Sweet Shop
+        Sweet Shop
       </h1>
 
       <div className="flex items-center gap-4">

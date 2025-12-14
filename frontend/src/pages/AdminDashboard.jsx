@@ -53,9 +53,8 @@ export default function AdminDashboard() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">Admin Dashboard 👑</h1>
+      <h1 className="text-2xl font-bold mb-6">Admin Dashboard </h1>
 
-      {/* Add Sweet Form */}
       <form
         onSubmit={handleCreate}
         className="grid grid-cols-2 gap-4 bg-white p-4 rounded shadow mb-8"
@@ -98,7 +97,6 @@ export default function AdminDashboard() {
         </button>
       </form>
 
-      {/* Sweet List */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {sweets.map((sweet) => (
           <div

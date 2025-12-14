@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js",
     "prisma:generate": "prisma generate",
     "prisma:seed": "node prisma/seed.js",
-    "test": "jest --runInBand"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --runInBand"
   },
   "prisma": {
     "seed": "node prisma/seed.js"
